@@ -13,6 +13,8 @@ beforeAll(async () => {
   process.env.JWT_KEY = "asdfasdf";
   process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
+  // breaking changes
+  // https://nodkz.github.io/mongodb-memory-server/docs/guides/migration/migrate7/#no-function-other-than-start-create-ensureinstance-will-be-starting-anything
   mongo = await MongoMemoryServer.create();
   const mongoUri = mongo.getUri();
 
