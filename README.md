@@ -46,4 +46,10 @@ nats-box:~#
 kubectl port-forward nats-0 4222:4222
 ```
 
+### connect to nats in node.js
+
+read https://github.com/nats-io/nats.js
+
+and the examples https://github.com/nats-io/nats.js/tree/master/examples
+
 ## rabbitmq

@@ -19,6 +19,8 @@ const doSomething = async (v: string) => {
       price: 20,
     });
 
+    nc.publish("ticket:created", sc.encode("hello"));
+    nc.publish("ticket:created", sc.encode("world"));
     nc.publish("ticket:created", sc.encode(data));
 
     // we want to insure that messages that are in flight

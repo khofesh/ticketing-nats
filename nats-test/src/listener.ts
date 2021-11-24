@@ -1,13 +1,13 @@
-import { connect, StringCodec } from "nats";
+import { connect, StringCodec, NatsConnection } from "nats";
 
 const server = "http://localhost:4222";
 
+let nc: NatsConnection;
 const doSomething = async (v: string) => {
   try {
-    const nc = await connect({ servers: v });
+    nc = await connect({ servers: v });
     console.log(`connected to ${nc.getServer()}`);
-    // this promise indicates the client closed
-    const done = nc.closed();
+
     // do something with the connection
 
     // create a codec
@@ -15,12 +15,9 @@ const doSomething = async (v: string) => {
     // create a simple subscriber and iterate over messages
     // matching the subscription
     const sub = nc.subscribe("ticket:created");
-    (async () => {
-      for await (const m of sub) {
-        console.log(`[${sub.getProcessed()}]: ${sc.decode(m.data)}`);
-      }
-      console.log("subscription closed");
-    })();
+    for await (const m of sub) {
+      console.log(`[${sub.getProcessed()}]: ${sc.decode(m.data)}`);
+    }
   } catch (error) {
     console.log(`error connecting to ${JSON.stringify(v)}`);
     console.error(error);
@@ -28,3 +25,13 @@ const doSomething = async (v: string) => {
 };
 
 doSomething(server);
+
+process.on("SIGINT", async () => {
+  await nc.close();
+
+  return console.log("subscription closed");
+});
+process.on("SIGTERM", async () => {
+  await nc.close();
+  return console.log("subscription closed");
+});
