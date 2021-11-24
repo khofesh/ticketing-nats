@@ -11,7 +11,7 @@
 // export { router as currentUserRouter };
 
 import express from "express";
-import { currentUser } from "../middlewares/current-user";
+import { currentUser } from "@slipperyslope/common";
 
 const router = express.Router();
 
