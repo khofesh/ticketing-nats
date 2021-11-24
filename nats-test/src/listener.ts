@@ -14,7 +14,7 @@ const doSomething = async (v: string) => {
     const sc = StringCodec();
     // create a simple subscriber and iterate over messages
     // matching the subscription
-    const sub = nc.subscribe("hello");
+    const sub = nc.subscribe("ticket:created");
     (async () => {
       for await (const m of sub) {
         console.log(`[${sub.getProcessed()}]: ${sc.decode(m.data)}`);
