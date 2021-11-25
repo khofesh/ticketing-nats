@@ -19,6 +19,12 @@ https://www.magalix.com/blog/kubernetes-statefulsets-101-state-of-the-pods
 
 https://github.com/nats-io/k8s
 
+## jetsream and nats streaming
+
+As of NATS Server 2.2, NATS JetStream is the recommended option for persistence, streaming and higher message guarantees. NATS Streaming a.k.a. 'STAN' is now considered legacy.
+
+https://docs.nats.io/reference/faq#jetstream-and-nats-streaming
+
 ### nats-box
 
 https://github.com/nats-io/nats-box
@@ -53,3 +59,11 @@ read https://github.com/nats-io/nats.js
 and the examples https://github.com/nats-io/nats.js/tree/master/examples
 
 ## rabbitmq
+
+https://www.rabbitmq.com/production-checklist.html
+
+https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-autoscaler#autoscaling_profiles
+
+https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md#how-can-i-check-what-is-going-on-in-ca-
+
+https://github.com/rabbitmq/cluster-operator/blob/main/docs/examples/resource-limits/rabbitmq.yaml
