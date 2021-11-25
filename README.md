@@ -57,13 +57,3 @@ kubectl port-forward nats-0 4222:4222
 read https://github.com/nats-io/nats.js
 
 and the examples https://github.com/nats-io/nats.js/tree/master/examples
-
-## rabbitmq
-
-https://www.rabbitmq.com/production-checklist.html
-
-https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-autoscaler#autoscaling_profiles
-
-https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md#how-can-i-check-what-is-going-on-in-ca-
-
-https://github.com/rabbitmq/cluster-operator/blob/main/docs/examples/resource-limits/rabbitmq.yaml
